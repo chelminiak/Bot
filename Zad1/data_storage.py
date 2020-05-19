@@ -31,6 +31,10 @@ class DataStorage:
         # Trade
         self.transaction(symbol, ask, bid)
         # ZADANIE 1 <--------------------------------------------
+        margin = self.command_execute('getMarginLevel')
+        money = margin.equity
+        s.update_portfolio(money)
+
 
     def transaction(self, symbol, ask, bid):
         """ Perfom transactions based on generated signlas.
